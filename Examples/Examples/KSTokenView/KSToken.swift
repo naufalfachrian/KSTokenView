@@ -25,12 +25,12 @@
 import UIKit
 
 
-//MARK: - KSToken
+// MARK: - KSToken
 //__________________________________________________________________________________
 //
 open class KSToken : UIControl {
    
-   //MARK: - Public Properties
+   // MARK: - Public Properties
    //__________________________________________________________________________________
    //
    
@@ -93,7 +93,7 @@ open class KSToken : UIControl {
       }
    }
    
-   //MARK: - Constructors
+   // MARK: - Constructors
    //__________________________________________________________________________________
    //
    convenience required public init(coder aDecoder: NSCoder) {
@@ -101,7 +101,7 @@ open class KSToken : UIControl {
    }
    
    convenience public init(title: String) {
-      self.init(title: title, object: title as AnyObject?);
+      self.init(title: title, object: title as AnyObject?)
    }
    
    public init(title: String, object: AnyObject?) {
@@ -111,7 +111,7 @@ open class KSToken : UIControl {
       backgroundColor = UIColor.clear
    }
    
-   //MARK: - Drawing code
+   // MARK: - Drawing code
    //__________________________________________________________________________________
    //
    override open func draw(_ rect: CGRect) {
