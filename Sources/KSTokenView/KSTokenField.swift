@@ -181,7 +181,7 @@ open class KSTokenField: UITextField {
    }
    
    fileprivate func _setScrollRect() {
-    let buffer:CGFloat = _bufferX ?? 0.0;
+    let buffer:CGFloat = _bufferX ?? 0.0
     let width = frame.width - _leftViewRect().width
     let height = frame.height
     
@@ -259,7 +259,7 @@ open class KSTokenField: UITextField {
       }
    }
    
-   //MARK: - Delete Token
+   // MARK: - Delete Token
    /*
    **************************** Delete Token ****************************
    */
@@ -321,7 +321,7 @@ open class KSTokenField: UITextField {
    }
    
    
-   //MARK: - Layout
+   // MARK: - Layout
    /*
    **************************** Layout ****************************
    */
@@ -398,7 +398,7 @@ open class KSTokenField: UITextField {
       var lineNumber = 1
       let leftMargin = _leftViewRect().width
       let rightMargin = _rightViewRect().width
-      let tokenHeight = _font!.lineHeight + _paddingY!;
+      let tokenHeight = _font!.lineHeight + _paddingY!
       
       var tokenPosition = CGPoint(x: _marginX!, y: _marginY!)
       
@@ -411,11 +411,11 @@ open class KSTokenField: UITextField {
             if (tokenPosition.x + tokenWidth + _marginX! + leftMargin > bounds.size.width - rightMargin) {
                lineNumber += 1
                tokenPosition.x = _marginX!
-               tokenPosition.y += (tokenHeight + _marginY!);
+               tokenPosition.y += (tokenHeight + _marginY!)
             }
             
             token.frame = CGRect(x: tokenPosition.x, y: tokenPosition.y, width: tokenWidth, height: tokenHeight)
-            tokenPosition.x += tokenWidth + _marginX!;
+            tokenPosition.x += tokenWidth + _marginX!
          }
       }
       
@@ -423,7 +423,7 @@ open class KSTokenField: UITextField {
       if ((bounds.size.width) - (tokenPosition.x + _marginX!) - leftMargin < _minWidthForInput) {
          lineNumber += 1
          tokenPosition.x = _marginX!
-         tokenPosition.y += (tokenHeight + _marginY!);
+         tokenPosition.y += (tokenHeight + _marginY!)
       }
       
       var positionY = (lineNumber == 1 && tokens.count == 0) ? _selfFrame!.size.height: (tokenPosition.y + tokenHeight + _marginY!)
@@ -446,7 +446,7 @@ open class KSTokenField: UITextField {
    */
    fileprivate func _layoutTokensHorizontally() -> CGPoint {
       let leftMargin = _leftViewRect().width
-      let tokenHeight = _font!.lineHeight + _paddingY!;
+      let tokenHeight = _font!.lineHeight + _paddingY!
       
       var tokenPosition = CGPoint(x: _marginX!, y: _marginY!)
       
@@ -456,7 +456,7 @@ open class KSTokenField: UITextField {
          
          if ((token.superview) != nil) {
             token.frame = CGRect(x: tokenPosition.x, y: tokenPosition.y, width: tokenWidth, height: tokenHeight)
-            tokenPosition.x += tokenWidth + _marginX!;
+            tokenPosition.x += tokenWidth + _marginX!
          }
       }
       
@@ -481,7 +481,7 @@ open class KSTokenField: UITextField {
       _scrollView.setContentOffset(bottomOffset, animated: true)
    }
    
-   //MARK: - Text Rect
+   // MARK: - Text Rect
    /*
    **************************** Text Rect ****************************
    */
@@ -535,7 +535,7 @@ open class KSTokenField: UITextField {
    }
    
    
-   //MARK: - Prompt Text
+   // MARK: - Prompt Text
    /*
     **************************** Prompt Text ****************************
     */
@@ -560,7 +560,7 @@ open class KSTokenField: UITextField {
    }
    
    
-   //MARK: - Placeholder
+   // MARK: - Placeholder
    /*
    **************************** Placeholder ****************************
    */
@@ -624,7 +624,7 @@ open class KSTokenField: UITextField {
    }
    
    
-   //MARK: - Token Gestures
+   // MARK: - Token Gestures
    //__________________________________________________________________________________
    //
    func isSelectedToken(_ token: KSToken) -> Bool {
@@ -710,7 +710,7 @@ open class KSTokenField: UITextField {
 }
 
 
-//MARK: - UIScrollViewDelegate
+// MARK: - UIScrollViewDelegate
 //__________________________________________________________________________________
 //
 extension KSTokenField : UIScrollViewDelegate {
@@ -733,9 +733,9 @@ extension KSTokenField : UIScrollViewDelegate {
    func updateCaretVisiblity(_ aScrollView: UIScrollView) {
       switch _direction {
       case .vertical:
-         let scrollViewHeight = aScrollView.frame.size.height;
-         let scrollContentSizeHeight = aScrollView.contentSize.height;
-         let scrollOffset = aScrollView.contentOffset.y;
+         let scrollViewHeight = aScrollView.frame.size.height
+         let scrollContentSizeHeight = aScrollView.contentSize.height
+         let scrollOffset = aScrollView.contentOffset.y
          
          if (scrollOffset + scrollViewHeight < scrollContentSizeHeight - 10) {
             hideCaret()
@@ -745,9 +745,9 @@ extension KSTokenField : UIScrollViewDelegate {
          }
          
       case .horizontal:
-         let scrollViewWidth = aScrollView.frame.size.width;
-         let scrollContentSizeWidth = aScrollView.contentSize.width;
-         let scrollOffset = aScrollView.contentOffset.x;
+         let scrollViewWidth = aScrollView.frame.size.width
+         let scrollContentSizeWidth = aScrollView.contentSize.width
+         let scrollOffset = aScrollView.contentOffset.x
          
          if (scrollOffset + scrollViewWidth < scrollContentSizeWidth - 10) {
             hideCaret()
