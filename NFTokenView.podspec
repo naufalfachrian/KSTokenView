@@ -21,11 +21,12 @@ Pod::Spec.new do |s|
 
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
+  s.swift_version = '5'
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/naufalfachrian/KSTokenView", :tag => "v.1.0.0" }
+  s.source       = { :git => "https://github.com/naufalfachrian/KSTokenView.git", :tag => "v.1.0.0" }
 
   s.source_files  = "KSTokenView/*.swift"
 end
