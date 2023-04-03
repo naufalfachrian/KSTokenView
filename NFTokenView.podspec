@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/khawars/KSTokenView.git", :tag => "v.1.0.0" }
+  s.source       = { :git => "https://github.com/naufalfachrian/KSTokenView", :tag => "v.1.0.0" }
 
   s.source_files  = "KSTokenView/*.swift"
 end
